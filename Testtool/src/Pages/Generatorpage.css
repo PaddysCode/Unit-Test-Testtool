@@ -1,0 +1,187 @@
+/* ===========================
+   GeneratorPage Layout
+=========================== */
+
+/* Der Hauptcontainer sollte eine maximale Breite haben, um das Bild zu spiegeln */
+.main-content {
+  flex: 1;
+  /* Reduziertes Padding, um Platz für den globalen Header zu lassen */
+  padding: 20px 40px; 
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px; /* Begrenzung der Breite */
+  margin: 0 auto; /* Zentrierung */
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Anpassung für den globalen Hintergrund des gesamten Fensters, falls noch nicht definiert */
+body {
+    background-color: #1e1e1e;
+}
+
+
+/* ===========================
+   Panels (Die Hauptboxen)
+=========================== */
+
+.panel {
+  flex: 1;
+  /* Hintergrund ist dunkler als der Body-Hintergrund, wie im Bild */
+  background-color: #252526; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  /* Der weiße Rand/Border, der das Panel umgibt, ist subtil */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===========================
+   Panel Header
+=========================== */
+
+.panel-header {
+  padding: 12px 20px; /* Weniger vertikales Padding als vorher */
+  /* Keine dicke Linie mehr, der Header ist nur durch die Textfarbe abgesetzt */
+  border-bottom: 1px solid #3c3c3c; 
+  font-size: 1rem; /* Kleiner als 18px */
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  /* Hintergrund für den Header etwas dunkler, um sich abzusetzen */
+  background-color: #2d2d2d; 
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.panel-header.code {
+  /* Helles Gelb für "Code Eingabe" */
+  color: #f7a94a; 
+}
+
+.panel-header.output {
+  /* Helles Blau/Cyan für "Generierte Unit Tests" */
+  color: #79d6f2; 
+}
+
+
+/* ===========================
+   Code/Textareas (Der Inhalt)
+=========================== */
+
+.code-input-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.text-area {
+  flex: 1;
+  padding: 15px 20px;
+  /* Wichtig: Hintergrund der Textarea wird jetzt der gleiche wie das Panel */
+  background-color: #252526; 
+  color: #dcdcdc; /* Hellerer Text, um sich vom Panel-Hintergrund abzusetzen */
+  border: none;
+  resize: none;
+  font-family: 'Consolas', 'Courier New', monospace; /* Bessere Monospace-Schrift */
+  font-size: 14px;
+  /* Keine abgerundeten Ecken unten, da der Button-Container folgt */
+  border-radius: 0; 
+  outline: none;
+  line-height: 1.5; /* Bessere Lesbarkeit */
+  
+  /* Spezieller Stil für Code-Beispiel (um Beispiel-Syntax darzustellen) */
+  /* Wenn du echtes Syntax-Highlighting nutzen willst, brauchst du eine Bibliothek! */
+  white-space: pre-wrap;
+}
+
+/* Die rechte Textarea hat keine Button-Container und kann abgerundete Ecken haben */
+.panel:nth-child(2) .text-area {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* ===========================
+   Button Container (im linken Panel)
+=========================== */
+
+.button-container {
+  padding: 15px 20px;
+  /* Der Trennstrich zum Code-Feld ist subtiler und dünner */
+  border-top: 1px solid #3c3c3c; 
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* Hintergrund behält die Panel-Farbe bei */
+  background-color: #252526; 
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.generate-button {
+  /* Die lila Farbe des Buttons im Bild */
+  background-color: #6c63ff; 
+  color: white;
+  border: none;
+  padding: 12px 25px; /* Etwas größeres Padding */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  transition: background-color 0.3s;
+}
+
+.generate-button:hover {
+  background-color: #7b73ff;
+}
+
+.delete-button {
+  background-color: transparent;
+  /* Helles Grau für den Müll-Icon */
+  color: #b0b0b0; 
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  /* Fügt einen leichten Hover-Effekt hinzu, passend zum Dark Mode */
+  transition: color 0.3s;
+}
+
+.delete-button:hover {
+  color: #ff6347; /* Leichtes Rot bei Hover */
+}
+
+/* ===========================
+   Globaler Header (Muss im übergeordneten Element sein)
+=========================== */
+
+/* Diese Klasse (z.B. .global-header) wäre nicht in Generatorpage.css, 
+   sondern in einer übergeordneten Komponente. */
+/* Beispiel, falls du den Header hier stylen musst: */
+.global-header {
+    text-align: center;
+    padding: 30px 0 20px 0;
+    color: #ffffff;
+    background-color: #1e1e1e;
+}
+
+.global-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.global-header p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}

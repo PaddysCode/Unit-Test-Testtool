@@ -185,3 +185,52 @@ body {
     color: #cccccc;
     font-size: 0.9rem;
 }
+
+/* ===========================
+   Dropdown (Modellauswahl)
+=========================== */
+
+.model-select {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #3c3c3c;
+  border-radius: 6px;
+  padding: 10px 15px;
+  padding-right: 35px; /* <— Platz für den Pfeil */
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #f7a94a 50%), 
+                    linear-gradient(135deg, #f7a94a 50%, transparent 50%);
+  background-position: right 12px center, right 8px center; /* <— Pfeil nach rechts verschoben */
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+
+/* Hover- und Fokus-Effekte */
+.model-select:hover {
+  border-color: #6c63ff; /* Gleiche Farbe wie dein "Generieren"-Button */
+}
+
+.model-select:focus {
+  border-color: #f7a94a; /* Fokus hebt sich gelb ab */
+  box-shadow: 0 0 5px rgba(247, 169, 74, 0.5);
+}
+
+/* Option Styles (für Chrome, Edge, etc.) */
+.model-select option {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* Für Safari (damit der Pfeil sichtbar bleibt) */
+@supports (-webkit-appearance: none) {
+  .model-select {
+    -webkit-appearance: none;
+  }
+}

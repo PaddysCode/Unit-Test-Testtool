@@ -81,8 +81,8 @@ class Calculator {
             placeholder="Geben Sie hier Ihre Methoden, Funktionen oder Klassen ein..."
           />
           <div className='button-container'>
-                        <select
-              className="model-select"
+            <select
+              className='model-select'
               value={selectedModel}
               onChange={(e) => setSelectedModel(e.target.value)}
               title="KI-Modell auswählen"

@@ -1,5 +1,4 @@
- import React from 'react';
-// Annahme: Du nutzt z.B. react-icons, daher der Import der Typen
+import React from 'react';
 import { IconContext } from 'react-icons'; 
 import { VscCode, VscBeaker } from 'react-icons/vsc'; 
 

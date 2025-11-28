@@ -1,57 +1,48 @@
-/* ===========================
-   GeneratorPage Layout
-=========================== */
 
-/* Der Hauptcontainer sollte eine maximale Breite haben, um das Bild zu spiegeln */
+
 .main-content {
   flex: 1;
-  /* Reduziertes Padding, um Platz für den globalen Header zu lassen */
+  
   padding: 20px 40px; 
   display: flex;
   gap: 20px;
   width: 100%;
-  max-width: 1200px; /* Begrenzung der Breite */
-  margin: 0 auto; /* Zentrierung */
+  max-width: 1200px;
+  margin: 0 auto; 
   background-color: #1e1e1e;
   color: #ffffff;
 }
 
-/* Anpassung für den globalen Hintergrund des gesamten Fensters, falls noch nicht definiert */
+
 body {
     background-color: #1e1e1e;
 }
 
 
-/* ===========================
-   Panels (Die Hauptboxen)
-=========================== */
+
 
 .panel {
   flex: 1;
-  /* Hintergrund ist dunkler als der Body-Hintergrund, wie im Bild */
+ 
   background-color: #252526; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   min-height: 420px;
-  /* Der weiße Rand/Border, der das Panel umgibt, ist subtil */
+ 
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ===========================
-   Panel Header
-=========================== */
 
 .panel-header {
-  padding: 12px 20px; /* Weniger vertikales Padding als vorher */
-  /* Keine dicke Linie mehr, der Header ist nur durch die Textfarbe abgesetzt */
+  padding: 12px 20px; 
   border-bottom: 1px solid #3c3c3c; 
-  font-size: 1rem; /* Kleiner als 18px */
+  font-size: 1rem; 
   font-weight: normal;
   display: flex;
   align-items: center;
-  /* Hintergrund für den Header etwas dunkler, um sich abzusetzen */
+ 
   background-color: #2d2d2d; 
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -186,9 +177,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* ===========================
-   Dropdown (Modellauswahl)
-=========================== */
 
 .model-select {
   background-color: #2d2d2d;

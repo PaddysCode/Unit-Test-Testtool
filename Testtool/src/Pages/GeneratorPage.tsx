@@ -30,6 +30,8 @@ class Calculator {
 
   const [selectedModel, setSelectedModel] = useState<string>('ChatGPT');
 
+  const [temperature, setTemperature] = useState<number>(0.2);
+
   const handleGenerateTests = async () => {
 
     try {
@@ -40,13 +42,13 @@ class Calculator {
 
        switch (selectedModel) {
         case 'chatgpt':
-          tests = await sendPromptToGPT(code);
+          tests = await sendPromptToGPT(code, temperature);
           break;
         case 'gemini':
-          tests = await sendPromptToGemini(code);
+          tests = await sendPromptToGemini(code, temperature);
           break;
         case 'claude':
-          tests = await sendPromptToClaude(code);
+          tests = await sendPromptToClaude(code, temperature);
           break;
         default:
           throw new Error('Unbekanntes Modell ausgewählt.');
@@ -90,6 +92,18 @@ class Calculator {
               <option value="chatgpt">ChatGPT</option>
               <option value="claude">Claude</option>
               <option value="gemini">Gemini</option>
+            </select>
+
+            <select
+              className='model-select'
+              value={temperature}
+              onChange={(e) => setTemperature(parseFloat(e.target.value))}
+              title="Kreativitätsgrad der KI"
+              style={{ marginRight: '10px', width: '130px' }} // Etwas breiter für den Text
+            >
+              <option value={0.3}>Temp (0.2)</option>
+              <option value={0.6}>Temp (0.5)</option>
+              <option value={1.0}>Temp (0.8)</option>
             </select>
             
             <button
